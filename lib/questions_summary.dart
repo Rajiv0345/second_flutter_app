@@ -12,14 +12,16 @@ class QuestionsSummary extends StatelessWidget {
         return Row(
           children: [
             Text(((data['question_index'] as int) + 1).toString()),
-            Column(
-              children: [
-                Text(data['question_text'] as String),
-                const SizedBox(height: 5),
-                Text('Your answer: ${data['user_answer']}'),
-                Text('Correct answer: ${data['correct_answer']}'),
-                const SizedBox(height: 20),
-              ],
+            Expanded(
+              child: Column(
+                children: [
+                  Text(data['question_text'] as String),
+                  const SizedBox(height: 5),
+                  Text('Your answer: ${data['user_answer']}'),
+                  Text('Correct answer: ${data['correct_answer']}'),
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ],
         );
